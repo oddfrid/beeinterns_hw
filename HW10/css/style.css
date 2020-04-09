@@ -1,0 +1,188 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed&display=swap');
+
+/* FOR ALL */
+
+body {
+    width: 1739px;
+    height: 3511px;
+}
+
+main {
+
+
+}
+
+.container {
+    width: 1205px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    height: 100px;
+    background-color: #FFF;
+   
+}
+
+.menu {
+    width: 1220px;
+    margin: auto;
+}
+
+.menu__nav_menu {
+    display: flex;
+    padding: 0px 110px 0px 310px;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.info {
+    width: 519px;
+    background-color: #429B2D;
+    color:#FFF;
+}
+
+.info__number {
+    display: flex;
+    width: 275px;
+    height: 60px;
+    font-size: 20px;
+    font-family: Arial;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 5px;
+}
+
+.info__reservCall {
+    display: flex;
+    width: 275px;
+    height: 40px;
+    border: 0px;
+    background-color: #DFC435;   
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 30px;
+}
+
+.btn {
+    font-size: 18px;
+    color:#FFF;
+    font-family: Arial;
+    font-stretch: condensed;
+}
+
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-stretch: condensed;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: green;
+    text-decoration: underline;
+}
+
+/* WHY US? */
+
+.why {
+
+    background-image: url(../img/why.jpg);
+    width: 100%;
+    height: 1295px;
+    background-size: cover;
+
+}
+
+.why__us {
+    padding: 110px 0px 85px 0px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.why__str {
+    padding: 0px 0px 60px 0px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h2, h3{
+    font-size: 42px;
+    font-family: Arial;
+    font-stretch: condensed;
+    color:#FFF;
+    font-weight: 100;
+    text-align: center;
+}
+h3 {
+    font-size: 36px;
+    margin-top: 0px;
+}
+.img_why {
+    width:90%;
+
+}
+/* TELL US */
+
+.tell {
+    background-image: url(../img/us.jpg);
+    width: 100%;
+    height: 1300px;
+    background-size: cover;
+}
+
+.tell__us {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    margin-top: 130px;
+}
+
+.tell__head {
+    padding: 80px;
+}
+
+.tell__flex {
+    display: flex;
+    margin-top: 20px;
+}
+
+.img_tell {
+    opacity: 70%;
+    padding: 0px 0px 0px 95px;
+}
+.img-tell {
+    width: 120%;
+}
+.phr {
+    display: flex;
+    flex-direction: column;
+    width: 720px;
+
+}
+
+.phr_p {
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+p {
+    font-size: 24px;
+    font-family: Arial;
+    color:#FFF;
+    padding: 0px 0px 0px 100px;
+   
+}
+
+/* MORE THEN */
+
+
+/* FOOTER */
