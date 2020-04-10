@@ -122,6 +122,45 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.block-why {
+    width: 400px;
+    font-size: 24px;
+}
+
+.why-1-l {
+    position: absolute;
+    bottom: 100px;
+    left: 300px;
+}
+
+.why-1-r, .why-2-r, .why-3-r, .why-4-r {
+    position: absolute;
+    font-size: 20px;
+    right: 120px;
+}
+
+.why-2-l {
+    position: absolute;
+    bottom: 100px;
+    left: 325px;
+}
+
+.why-3-l {
+    position: absolute;
+    bottom: 110px;
+    left: 250px;
+}
+
+.why-4-l {
+    position: absolute;
+    bottom: 110px;
+    left: 260px;
+
 }
 
 h2, h3{
