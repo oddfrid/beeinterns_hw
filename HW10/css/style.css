@@ -36,7 +36,6 @@ header {
     display: flex;
     height: 100px;
     background-color: #FFF;
-   
 }
 
 .menu {
@@ -240,10 +239,37 @@ h3 {
     height: 710px;
 }
 
+.flex-rect {
+    position: relative;
+}
+
+.rect {
+   width: 80px;
+   height: 240px; 
+   background-color: rgb(240, 236, 236);
+   position: absolute;
+   top:75px;
+}
+
+.rect-1 {
+    left:467px;
+}
+.rect-2 {
+    left:710px;
+}
+.rect-3 {
+    left:950px;
+}
+.rect-4 {
+    left:1190px;
+}
+
 .more_content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .more_img {
