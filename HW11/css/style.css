@@ -65,6 +65,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     width: 400px;
 }
 .img-short {
@@ -95,15 +96,11 @@ header {
     color: #757575;
 }
 
-.img-short{
+.img-short, .img-cart {
     width: 36px;
     height: 30px;
 }
 
-.img-cart {
-    width: 36px;
-    height: 30px;
-}
 /* sub-header */
 
 .sub-header {
@@ -145,7 +142,6 @@ h1 {
 }
 
 h3 {
-
     margin-top:48px;
     font-size: 14px;
     color: #007AFF;
@@ -167,15 +163,15 @@ h3 {
     font-weight: 500;
     font-size: 14.004px;
     line-height: 17px;
-
 }
 
 .blank-box {
     height: 632.82px;
     width: 970px;
+    padding: 21px;
+    
     border: 1px solid lightgray;
     border-radius: 4px;;
-    padding: 21px;
 }
 .blank-row {
     margin-top: 25px;
@@ -297,7 +293,6 @@ h2 {
     font-size: 14px;
     line-height: 30px;
     padding-left: 5px;
-    
 }
 /* base */
 
