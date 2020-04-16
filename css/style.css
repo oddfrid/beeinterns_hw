@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------*/
 body {
   font-family: 'Montserrat', 'Roboto', sans-serif;
-  width: 1440px;
+  width: 100%;
 }
 
 a {
@@ -96,7 +96,7 @@ button {
 header {
   background-color: rgba(25, 23, 32, 0.52);
   position: fixed;
-  width: 1440px;
+  width: 100%;
   z-index: 3;
 }
 
@@ -107,9 +107,9 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 13px 95px 14px 94px;
 }
 
@@ -121,7 +121,7 @@ header {
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
-  letter-spacing: 1.90909px;
+  letter-spacing: 2px;
   margin-left: 113px;
   display: inline-block;
 }
@@ -225,6 +225,15 @@ header {
   font-size: 50px;
   line-height: 55px;
   padding-bottom: 20px;
+  position: relative;
+}
+
+.headphone-2 h2::after {
+  content: '+';
+  position: absolute;
+  top: -40%;
+  font-size: 40px;
+  font-weight: 900;
 }
 
 .headphone-2 h3 {
@@ -249,6 +258,15 @@ header {
   position: absolute;
   right: -110px;
   max-width: 775px;
+  z-index: 1;
+}
+
+.headphone-2__img .dots {
+  position: absolute;
+  top: 80%;
+  right: 350px;
+  max-width: 775px;
+  z-index: 2;
 }
 
 .headphone-2__content {
@@ -308,6 +326,10 @@ header {
   background-color: #000;
 }
 
+.btn-1:focus, .btn-2:focus, .btn-3:focus {
+  border: 1px solid #000;
+}
+
 .headphone-3 h2 {
   font-weight: 500;
   font-size: 50px;
@@ -326,13 +348,15 @@ header {
 }
 
 .headphone-3__container {
-  padding: 113px 93px 69px;
+  padding: 169px 0px 69px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  max-width: 1270px;
+  margin: 0px auto;
 }
 
 .headphone-3 .col1, .headphone-3 .col2, .headphone-3 .col3 {
@@ -412,10 +436,12 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 55px 0px 135px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 55px 190px 49.81px 135px;
+  max-width: 1170px;
+  margin: 0px auto;
 }
 
 .footer__section {

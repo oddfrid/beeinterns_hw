@@ -15,7 +15,7 @@ $clr8: #000;
 
 body {
     font-family: 'Montserrat', 'Roboto', sans-serif;
-    width: 1440px;
+    width: 100%;
 }
 
 a {
@@ -39,7 +39,7 @@ button {
 header {
     background-color: $clr7;
     position: fixed;
-    width: 1440px;
+    width: 100%;
     z-index: 3;
 }
 
@@ -48,7 +48,7 @@ header {
     &__container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         padding: 13px 95px 14px 94px;
     }
 
@@ -60,7 +60,7 @@ header {
         font-weight: 500;
         font-size: 15px;
         line-height: 18px;
-        letter-spacing: 1.90909px;
+        letter-spacing: 2px;
         margin-left: 113px;
         display: inline-block;
     }
@@ -153,6 +153,14 @@ header {
         font-size: 50px;
         line-height: 55px;
         padding-bottom: 20px;
+        position: relative;
+    }
+    h2::after {
+        content: '+';
+        position: absolute;
+        top: -40%;
+        font-size: 40px;
+        font-weight: 900;
     }
     h3 {
         font-size: 40px;
@@ -171,6 +179,14 @@ header {
         position: absolute;
         right: -110px;
         max-width: 775px;
+        z-index: 1;
+    }
+    &__img .dots{
+        position: absolute;
+        top: 80%;
+        right: 350px;
+        max-width: 775px;
+        z-index: 2;
     }
     &__content{
         margin-left: -45px;
@@ -221,6 +237,9 @@ header {
     background-color: $clr8;
 }
 
+.btn-1:focus, .btn-2:focus, .btn-3:focus {
+    border: 1px solid $clr8;
+}
 //  HEADPHONE-3
 
 .headphone-3 {
@@ -239,10 +258,13 @@ header {
         line-height: 21px;
     }
     &__container {
-        padding: 113px 93px 69px;
+        padding: 169px 0px 69px;
         display: flex;
         justify-content: space-between;
+        max-width: 1270px;
+        margin: 0px auto;
     }
+
     .col1, .col2, .col3 {
         position: relative;
     }
@@ -309,8 +331,10 @@ footer {
 .footer {
     &__container {
         display: flex;
+        padding: 55px 0px 135px;
         justify-content: space-between;
-        padding: 55px 190px 49.81px 135px;
+        max-width: 1170px;
+        margin: 0px auto;
     }
 
     &__section {
