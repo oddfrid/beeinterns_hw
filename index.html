@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">  
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>Цитаты из книги «Запрет на себя»</h1>
+            <div class="wrap">
+                <section class="tab">
+                    <button class="pick">Хочу интересную и приятную судьбу</button>
+                    <div class="content">
+                        <h2>Не все люди</h2>
+                        <article>Вовсе не все люди в состоянии построить сами свою судьбу так, как им хочется. Это было бы слишком просто, если бы все нажимали кнопку: «<a href="#">Хочу интересную и приятную судьбу</a>» и получали бы ее, сахарным сиропом политую.</article>
+                        <article>Не у всех одинаковые стартовые данные, ни у всех были хорошие семьи, не все верят в себя, идут напролом. Если одним победа дается, хоть и с трудом, то других она просто обходит стороной. Просто у всех разная судьба. Но в любом случае каждый должен до последнего быть на плаву. Ради себя, прежде всего!</article>
+                        <article>Все зависит от отношения к ситуации: кто-то скажет, что ему вообще не везет, все рушится и поставит на себе крест, а другой поймет, что, значит, не туда идет, что есть другие дороги и надо наслаждаться тем, что есть, пробовать, не бояться, да, поныть иногда, но утром проснуться и шагать дальше.</article>
+                    </div>
+                </section>
+                <section class="tab">
+                    <button class="pick">Чего бы это ни стоило</button>
+                    <div class="content">
+                        <h2>Правил не существует</h2>
+                        <article>Чего бы это ни стоило – никогда не поздно, никогда не рано стать тем, кем ты хочешь стать. <a href="#">Временных рамок нет</a>, можешь начать когда угодно. Можешь измениться или остаться прежним – правил не существует.</article>
+                        <picture>
+                            <img src="img/img.png" alt="book">
+                        </picture>
+                    </div>
+                </section>
+                <section class="tab">
+                    <button class="pick">Место в жизни</button>
+                    <div class="content">
+                        <h2>Место в жизни</h2>
+                        <article>Любишь жизнь и одновременно понимаешь, что найти свое истинное место в ней – самая сложная задача бытия. «<a href="#">Место в жизни</a>» – это не любовь или карьера. Это нечто большее, внутреннее, очень свое. Это когда смотришь на небо и понимаешь, что под одним из облаков твое место, пусть маленькое, но твое…</article>
+                    </div>
+                </section>
+            </div>           
+        </div>
+    </main>
+    <script>
+        var acc = document.getElementsByClassName("pick");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+        </script>
+</body>
+</html>
