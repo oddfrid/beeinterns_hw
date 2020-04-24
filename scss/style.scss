@@ -1,0 +1,277 @@
+@import "default.scss";
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+// FOR ALL
+
+$clr-1: #1C1E20;
+$clr-2: #D8D8D8;
+$clr-3: #787878;
+
+body {
+	width: 1440px;
+	font-family: 'Abel', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 60px;
+	line-height: 76px;
+}
+
+h2 {
+	font-size: 36px;
+	line-height: 46px;
+	margin-top: 1px;
+}
+
+h3 {
+	font-size: 35px;
+	line-height: 47px;
+	text-align: center;
+	letter-spacing: 4.375px;
+}
+
+h4 {
+	font-size: 30px;
+	line-height: 38px;
+}
+
+p {
+	font-size: 18px;
+	line-height: 30px;
+	color: $clr-1;
+}
+
+a {
+	color: $clr-3;
+	font-size: 18px;
+	line-height: 23px;
+}
+
+button {
+	background: #000;
+	color: #FFF;
+	font-size: 26px;
+	line-height: 33px;
+	height: 60px;
+	padding: 15px 88px 12px 71px;
+}
+
+input {
+	padding: 15px 198px 12px 40px;
+	margin-right: -61px;
+	height: 60px;
+	font-size: 26px;
+	line-height: 33px;
+}
+
+img {
+	max-width: 20px;
+	width: 100%;
+}
+
+.logo-img {
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+}
+
+
+.link {
+	width: 154px;
+	height: 31px;
+}
+
+// HEADER
+
+header {
+	height: 89px;
+	background:#FFF;
+}
+
+.header {
+		&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 17px 50px;
+	}
+		&__logo .logo-img {
+			background: $clr-2;
+		}
+		&__menu {
+			display: flex;
+			justify-content: space-between;	
+			
+		}
+		&__menu .link {
+			margin-left: 40px;
+		}
+}
+
+header .link{
+	background: $clr-2;
+}
+
+.white-btn {
+	background:  #FFF;
+	color: #000;	
+	padding: 15px 71px 12px 85px;
+}
+
+// MAIN 
+
+.banner {
+		background: $clr-2;
+		padding: 120px 719px 118px 130px;
+		&__btn {
+			display: flex;
+			justify-content: space-between;
+			padding-top: 29px;
+		}
+}
+.btn {
+
+		&_white {
+		}
+}
+.article-1 {
+	padding: 80px 110px 82px 110px;
+		display: flex;
+		justify-content: space-between;
+		&__column {
+			max-width: 380px;
+		}
+		&__column h4 {
+			margin-bottom: 5px;
+			max-width: 380px;
+		}
+		&__img {
+			background: $clr-2;
+			width: 380px;
+			height: 244px;
+			margin-bottom: 35px;
+		}
+
+		&__link {
+			color: $clr-3;
+			font-size: 18px;
+			line-height: 23px;
+			display: inline-block;
+			padding-top: 40px;
+		}
+}
+.subscription {
+		background: $clr-2;
+		display: flex;
+		flex-direction: column;
+		padding: 129px 373px 129px 372px;
+		&__input {
+			display: flex;
+			margin-top: 30px;
+		}
+		&__input button{
+			padding: 15px 98px 12px 89px;
+		}
+}
+.article-2 {
+	display: flex;
+	flex-direction: column;
+	padding: 80px 125px 80px 124px;
+		&__row {
+			display: flex;
+			padding-left: 15px;
+			
+		}
+		&__row:nth-child(2) {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			margin: 80px 0px 60px 0px;
+			padding-right: 15px;
+		}
+
+		&__content {
+			width: 50%;
+			text-align: end;
+			padding: 123px 45px 127px 0px;
+		}
+		
+		&__row:nth-child(2) &__content {
+			text-align: start;
+			padding: 123px 0px 127px 45px;
+		}
+
+		&__img {
+			margin-right: -15px;
+
+			background: $clr-2;
+			width: 588px;
+			height: 386px;
+		}
+		
+		&__row:nth-child(2) &__img {
+			margin-left: -15px;
+
+			background: $clr-2;
+			width: 588px;
+			height: 386px;
+		}
+
+		&__btn {
+			padding:80px 0px 0px;
+			margin:0px auto;
+		}
+}
+
+//FOOTER
+
+footer {
+	height: 415px;
+	background: $clr-2;
+}
+
+.footer {
+		&__container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 97px 222px 100px;
+		}
+		&__logo {
+			padding-bottom: 30px;
+		}
+		&__logo .logo-img{
+			background: #FFF;
+		}
+		&__menu {
+			display: flex;
+			justify-content: space-between;
+			position: relative;	
+		}
+		&__menu .link {
+			margin: 0px 20px 29px;
+			background: #FFF;
+		}
+		&__menu::after {
+			content: '';
+			position: absolute;
+			transform: translate(-50%, 50%);
+			left: 50%;
+			top: 50%;
+			margin-top: 29px;
+			width: 996px;
+			height: 2px;
+			background: #FFF;
+		}
+		&__icons {
+			padding-top: 25.5px;
+			display: flex;
+			flex-direction: row;
+		}
+		&__icons img {
+			display: inline-block;
+			margin: 0px 37.5px;
+		}
+}
