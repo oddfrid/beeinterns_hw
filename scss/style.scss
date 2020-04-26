@@ -1,0 +1,309 @@
+@import "default.scss";
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    font-family: Lato;
+}
+
+input {
+    width: 330px;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    color: #757575;
+    padding: 12px 14px;
+    position: relative;
+}
+
+.global-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.container {
+    min-width: 970px;
+    margin: 0 auto;
+}
+
+.btn-blue {
+    padding: 12px 20px;
+    background-color: #007AFF;
+    color: #FFF;
+    border: none;
+    border-radius: 0px 4px 4px 0px;
+    font-size: 14px;
+    line-height: 17px;
+}
+.btn-white {
+    padding: 12px 30px;
+    background-color: #FFF;
+    color: #858585;
+    border: 1px solid #a5a5a5;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+// HEADER
+
+.header {
+    &__top {
+        display: flex;
+        align-items: center;
+        height: 100px;
+    }
+
+    &__search-panel {
+        flex: 1 1 auto;
+        padding-left: 130px/1280px * 100%;
+        margin-right: 70px;
+    }
+    &__search-panel input{
+        width: 330px;
+        border: 1px solid #E0E0E0;
+        border-radius: 4px 0px 0px 4px;
+        color: #757575;
+        padding: 11px 14px;
+        position: relative;
+
+        
+    }
+    &__search-panel button{
+        top: 30px;
+        position: absolute;
+    }
+
+    &__authorize {
+        display: flex;
+        align-items: center;
+        img {
+            width: 28px;
+            height: 26px;
+        }
+        div:not(:first-child) {
+            padding-left: 25px;
+        }
+        div:last-child {
+            padding-bottom: 10px;
+        }
+    }
+    &__sub {
+        display: flex;
+        background-color: #F4F4F4;
+        width: 100%;
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+        height: 45px;
+        min-width: 1280px;
+    }
+    li:first-child {
+        margin: 0px 20px 0px 0px;
+    }
+    li {
+        margin: 0px 20px;
+        font-size: 15px;
+    }
+    li a {
+        color: #737270;
+    }
+}
+
+// MAIN
+
+.container {
+        max-width: 970px;
+        margin: 0px auto;
+}
+
+.content {
+    flex: 1 0 auto;
+    input {
+        margin: 10px 0px;
+    }
+    label {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+    }
+    h1 {
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 35px;
+        font-size: 26px;
+    }
+    h2 {
+        padding: 10px 0px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14.004px;
+        line-height: 17px;
+        color: #007AFF;
+        letter-spacing: 0.28008px;
+        border-bottom: 1px solid #C6C6C5;
+    }
+    &__menu {
+        display: flex;
+        justify-content: space-around;
+        font-size: 14px;
+        line-height: 17px;
+        a {
+            color: #878786;
+            letter-spacing: 0.28008px;
+            font-weight: 500;
+        }
+    }
+    form {
+        margin-top: 20px;
+        margin-bottom: 120px;
+        padding: 20px;
+        border: 1px solid #C6C6C5;
+        border-radius: 4px;
+    }
+    .name:not(:first-child) {
+        width: 235px;
+        margin-left: 21px;
+    }
+    .name:first-child {
+        width: 150px;
+        margin-right: 10px;
+    }
+    .title {
+        width: 100%;    
+    }
+    .mail {
+        width: 300px;
+
+    }
+    &__form-elem {
+        margin: 40px 0px;
+    }
+    &__form-elem:first-child {
+        margin: 20px 0px;
+    }
+
+    &__input-block {
+        display: flex;
+    }
+
+    &__flex {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 17px;
+    }
+
+    &__block-elem-1 {
+
+        width: 298px;
+    }
+    &__block-elem-2 {
+        margin: 0px 16px;
+        width: 298px;
+    }
+    &__block-elem-3 {
+
+        width: 298px;
+    }
+
+    &__note {
+        color: #878786;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.28008px;
+    }
+
+    &__end {
+        display: flex;
+        align-items: center;
+        padding: 48px 18px 15px;
+        div:nth-child(2) {
+            flex: 1 1 auto;
+            text-align: center;
+            font-size: 14.004px;
+            line-height: 16px;
+            color: #878786;
+            letter-spacing: 0.28008px;
+        }
+        button {
+            letter-spacing: 0.28008px;
+            border-radius: 4px;
+        }
+    }
+}
+
+//FOOTER
+
+.footer {
+    flex-shrink: 0;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    &__top-elem {
+        display: flex;
+        flex-direction: column;
+        h3 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            color: #1C1C1B;
+        }
+        a {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 30px;
+            padding-top: 10px;
+            color: #1C1C1B;
+            position: relative;
+        }
+
+        .fb, .im, .tw, .pt {
+            padding-left: 25px;
+        }
+        
+        .fb::before {
+            content: url("/img/fb\ icon.png");
+            position: absolute;
+            top: 15px;
+            left: -5px;
+        }
+        .pt::before {
+            content: url("/img/pntr\ icon.png");
+            position: absolute;
+            top: 15px;
+            left: -5px;
+        }
+        .tw::before {
+            content: url("/img/twt\ icon.png");
+            position: absolute;
+            top: 15px;
+            left: -5px;
+        }
+        .im::before {
+            content: url("/img/insta\ icon.png");
+            position: absolute;
+            top: 14px;
+            left: -5px;
+        }
+    }
+
+    &__sub {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0px;
+        border-top: 1px solid #C6C6C5;
+
+        a {
+            margin: 0px 10px;
+            font-size: 14px;
+            color: #878786;
+        }
+    }
+}
+
+
+
+
