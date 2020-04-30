@@ -1,0 +1,50 @@
+@import "default.scss";
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+@media (min-width: 320px) {
+    .header {
+        border-bottom: 2px solid #A3A3A3;
+
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .logo-link {
+        display: none;
+    }
+    .burger {      
+    }
+    .burger-img {
+        width: 22px;
+    }
+    .menu {
+        display: flex;
+    }
+    .menu-li {
+        font-size: 15px;
+    }
+    .menu-li:active {
+        border-bottom: 5px solid #FFF;
+    }
+    .menu-hide {
+        display: none;
+        
+    }
+    .form-search {
+        border-left: 1px solid #A3A3A3;
+        
+    }
+    .search {
+        font-size: 13px;
+        margin-left: 30px;
+        
+    }
+}
+
