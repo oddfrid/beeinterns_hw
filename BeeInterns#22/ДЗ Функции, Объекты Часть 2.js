@@ -2,7 +2,7 @@
 
 let i = 0;
 
-for (let i = 0; i <= 50; i+=10) {
+for (i +=10; i <= 50; i+=10) {
   console.log(i);
 }
 // Ожидаемый результат: 10 20 30 40 50
@@ -39,4 +39,3 @@ setTimeout(function(index) {
   for (let index of bird) 
   console.log(index);
 }, 100);
-
