@@ -3,23 +3,30 @@
 //? 1. Написать тесты для каждой комманды
 //? 2. Написать скрипт для получения погоды с сайта
 //? 3. Написать функции для создания элементов contentElem.prepend($(`...`));
-//? 4. Заново  верстать и стилизовать???
 
 ////////////////////////////////////////////////////////////////////
-import { inputElem, btnElem, contentElem } from '../constants/constants.js'
-// const inputElem = $('#inp');
-// const btnElem = $('#btn');
-// const contentElem = $('#content')
+import { inputElem, dottedLineElem, btnElem, contentElem, userRequest, botAnswers, mainWrapElem } from '../constants/constants.js'
 
-/* Disabled if input is empty */
-inputElem.on('input', () => {
-  let inputValue = ($('#inp').val()).trim();
-  if (inputValue !== '') {
+/* Disabled btn if input field is empty, else enabled btn + dots animation displaying*/
+const inputValueExistCheck = () => {
+  let inputValue = (inputElem.val()).trim();
+  if (inputValue) {
     btnElem.removeAttr('disabled');
+    dottedLineElem.removeClass('nodisplay')
   } else {
     btnElem.attr('disabled', true);
+    dottedLineElem.addClass('nodisplay');
   }
-})
+}
+
+inputElem.on('input', () => inputValueExistCheck());
+/* * * * */
+
+/* To empty input field */
+const refreshInput = () => {
+  inputElem.val('');
+  inputValueExistCheck();
+}
 /* * * * */
 
 /* Bot's commands*/ 
@@ -42,7 +49,7 @@ const allowedCommandsReg = [
 ]
 
 const checkValidation = inputValue => { 
-  for (const commandReg of allowedCommandsReg) {
+  for (let commandReg of allowedCommandsReg) {
       if (commandReg.test(inputValue)) {
         return true;
       }
@@ -50,66 +57,67 @@ const checkValidation = inputValue => {
 }
 
 const reportError = value => {
-    if (status.isStarted){
-      if (value === 'secondIsNull') {
-        contentElem.prepend($(`<div>На ноль делить нельзя! Выбери и введи другое действие или выбери и введи другие числа с помощью команды <code>/number: <i>число1</i>, <i>число2</i></code></div>`));
-      }
-    }
-    else {
-      contentElem.prepend($(`<div>${value}</div>
-                            <div>Я не понимаю, введите другую команду!</div>`));
+    if (value === 'secondIsNull' && status.isStarted) {
+        contentElem.prepend(botAnswers.getValue(7));
+    } else {
+      contentElem.prepend(userRequest.getValue(value));
+      contentElem.prepend(botAnswers.getValue(8));
     }
 }
 
 const doWork = inputValue => {
   if (/^\/name/.test(inputValue)) {
     const name = inputValue.replace(/\/name\s*:/g, '');
-    contentElem.prepend($(`<div>/name</div>
-                          <div>Привет ${name}, приятно познакомится. Я умею считать, введи числа которые надо посчитать</div>`))
+    contentElem.prepend(userRequest.getValue(inputValue));
+    contentElem.prepend(botAnswers.getValue(2, name));
   } else if (/^\/number/.test(inputValue)) {
-    contentElem.prepend($(`<div>${inputValue}</div>`));
     const numArr = (inputValue.replace(/\/number\s*:/g, '')).split(',');
     status.numArray = numArr
     status.arrAdded = true;
-    contentElem.prepend($(`<div>Выбери и введи одно из следующих действий:  -, +, *, /</div>`));
+    contentElem.prepend(userRequest.getValue(inputValue));
+    contentElem.prepend(botAnswers.getValue(3));
   } else if (/^[\/\+\-\*]$/.test(inputValue) && status.arrAdded){
-    const operationValue = inputValue;
-    const firstNumValue = +status.numArray[0];
-    const secondNumValue = +status.numArray[1];
-    if (secondNumValue === 0 && operationValue === "/") {
-      reportError('secondIsNull');
-    } else {
-        status.arrAdded = false;   
-        if (operationValue === "+") {
-          result = firstNumValue + secondNumValue
-        } else if (operationValue === "-") {
-          result = firstNumValue - secondNumValue
-        } else if (operationValue === "*") {
-          result = firstNumValue * secondNumValue
-        } else if (operationValue === "/") {
-          result = firstNumValue / secondNumValue
+      const operationValue = inputValue;
+      const firstNumValue = +status.numArray[0];
+      const secondNumValue = +status.numArray[1];
+      if (secondNumValue === 0 && operationValue === "/") {
+        reportError('secondIsNull');
+      } else {
+          status.arrAdded = false;   
+          let result = 0
+          if (operationValue === "+") {
+            result = firstNumValue + secondNumValue
+          } else if (operationValue === "-") {
+            result = firstNumValue - secondNumValue
+          } else if (operationValue === "*") {
+            result = firstNumValue * secondNumValue
+          } else if (operationValue === "/") {
+            result = firstNumValue / secondNumValue
+          }
+          contentElem.prepend(userRequest.getValue(inputValue));
+          contentElem.prepend(botAnswers.getValue(4, result));
         }
-        contentElem.prepend($(`<div>${result}</div>`))
-      }
     } else if (/^\/weather/.test(inputValue)) {
-      contentElem.prepend($(`<div>/weather</div>
-                              <div><img src="http://www.pogoda.msk.ru/tomorow.php3?st=5&t=9"  alt="Погода в Москве - прогноз на сегодня"></div>`));
+      contentElem.prepend(userRequest.getValue(inputValue));
+      contentElem.prepend(botAnswers.getValue(5));
     } else if (/^\/stop/.test(inputValue)) {
+      contentElem.prepend(userRequest.getValue(inputValue));
+      contentElem.prepend(botAnswers.getValue(6));
       status.isStarted = 0;
     }
   }
 
 btnElem.on('click', (e) => {
   e.preventDefault();
-  const inputValue = ($('#inp').val()).trim();  
+  const inputValue = (inputElem.val()).trim();  
   if (checkValidation(inputValue)) {
     if (inputValue === '/start' && status.isStarted === 0) {
       status.isStarted = 1;
-      contentElem.prepend($(`<div>/start</div>
-                              <div>Привет, меня зовут Чат-бот, а как зовут тебя?</div>`))
+      contentElem.prepend(userRequest.getValue(inputValue));
+      contentElem.prepend(botAnswers.getValue(1));
     } else if (status.isStarted === 0) {
-      contentElem.prepend($(`<div>${inputValue}</div>
-                              <div>Введите команду /start, для начала общения</div>`))
+      contentElem.prepend(userRequest.getValue(inputValue));
+      contentElem.prepend(botAnswers.getValue(0));
     } else {
       doWork(inputValue);
     }
@@ -117,5 +125,7 @@ btnElem.on('click', (e) => {
   else {
     reportError(inputValue);
   }
+  mainWrapElem.scrollTop(contentElem.height());
+  refreshInput();
 });
 /* * * * */
