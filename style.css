@@ -1,0 +1,45 @@
+.main-content {
+  flex-direction: column;
+}
+
+.main-content, .frame-content{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comfortaa', cursive;
+  font-size: 24px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+a {
+  color: blueviolet;
+}
+
+iframe {
+  width: 300px;
+  height: 200px;
+  border-radius: 35px;
+  box-shadow: 0px 0px 10px 3px rgb(160, 134, 175);
+}
+
+.btn-elem {
+  margin: 25px;
+  cursor: pointer;
+}
+.btn-style {
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  background: linear-gradient(-45deg, rgb(135, 103, 253), rgb(249, 86, 255));
+  border-radius: 35px;
+  outline: none;
+  font-family: 'Comfortaa', cursive;
+}
+
+.btn-style:focus, .btn-style:active, .btn-style:hover{
+  box-shadow: 0px 0px 10px rgb(160, 134, 175);
+}
