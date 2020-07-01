@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW29</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>HW29-BeeInterns by <a href="https://github.com/oddfrid" target="_blank" rel="noopener noreferrer">@oddfrid</a></h1>
+    </header>
+    <main class="form-wrap">
+        <form  id="form">
+            <div class="form-content">
+                <h3>Обо мне</h3>
+                <label class="label-block" for="name">Имя</label>
+                <input type="text" id="name" name="name"placeholder="" required autofocus>
+                <label class="label-block" for="age">Возраст</label>
+                <input type="text" id="age" name="age" placeholder="" required>
+                <label class="label-block" for="city">Город</label>
+                <input type="text" id="city" name="city" placeholder="" required>
+                <h3>Мои курсы</h3>
+                <div class="form-cell">
+                    <input class="checkbox" type="checkbox" name="courses" id="courseHTML">
+                    <label for="courseHTML">HTML</label>
+                </div>
+                <div class="form-cell">
+                    <input class="checkbox" type="checkbox" name="courses" id="courseCSS">
+                    <label for="courseCSS">CSS</label> 
+                </div>
+                <div class="form-cell">
+                    <input class="checkbox" type="checkbox" name="courses" id="courseJS">
+                    <label for="courseJS">JS</label>
+                </div>
+                <div class="btn-wrap">
+                    <button class="btn" type="submit">Сохранить</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="cookie.js"></script>
+    <script src="localstorage.js"></script>
+</body>
+</html>
