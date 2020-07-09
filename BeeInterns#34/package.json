@@ -1,15 +1,16 @@
 {
   "name": "bee34",
   "version": "1.0.0",
+  "description": "",
   "private": true,
   "scripts": {
     "watch": "cross-env NODE_ENV=development npx webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development npx webpack-dev-server --mode development --open",
     "dev": "cross-env NODE_ENV=development npx webpack --mode development",
     "prod": "cross-env NODE_ENV=production npx webpack --mode production",
-    "eslint": "eslint .\\webpack.config.js --fix"
+    "eslint": "./node_modules/.bin/eslint .\\webpack.config.js --fix"
   },
-  "author": "oddfrid",
+  "author": "oddfrid <ek.krivitskaya@yandex.ru>",
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
@@ -33,15 +34,5 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
-  },
-  "main": "webpack.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/oddfrid/beeinterns_hw.git"
-  },
-  "bugs": {
-    "url": "https://github.com/oddfrid/beeinterns_hw/issues"
-  },
-  "homepage": "https://github.com/oddfrid/beeinterns_hw#readme",
-  "description": ""
+  }
 }

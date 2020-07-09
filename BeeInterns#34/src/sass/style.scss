@@ -1,0 +1,400 @@
+
+$color-white: #FFF;
+$color-blue: #2B6EB2;
+$color-orange: #FF7761;
+$color-custom-orange: #ff7661e1;
+$color-bg: #FCFCFC;
+$color-item-div: #F7F7F7;
+$color-header-links: #0000003d;
+$color-aside-list: #38466E;
+$color-item-card-text: #5F6D74;
+$color-checkbox-border: #D6D6D6;
+
+$fz-regular: 14px;
+$fz-logo: 30px;
+$fz-aside-section: 24px;
+$fz-aside-subsection: 20px;
+$fz-item-name: 18px;
+$fz-jeans: 16px;
+$fz-tag: 12px;
+
+$ff-roboto: 'Roboto', sans-serif;
+$ff-openSans: 'Open Sans', sans-serif;
+
+$header-h: 95px;
+$line-w: 40px;
+$line-h: 5px;
+$line-br: 6px;
+
+$tag-w: 90px;
+$tag-h: 30px;
+$tag-br: 16px;
+
+$checkbox-br: 4px;
+$checkbox-mr-section: 26px;
+$checkbox-mr-subsection: 32px;
+$checkbox-mb-section: 45px;
+$checkbox-mb-subsection: 22px;
+$checkbox-mb-subsection-last: 36px;
+
+$ul-ml: 20px;
+$ul-pl: 30px;
+
+%flex-row-wrap {
+    display: flex;
+    flex-flow: row wrap;
+}
+%flex-center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%item-img {
+    width: 414px;
+    height: 251px;
+    background: $color-item-div;
+}
+%tag-style {
+    width: $tag-w;
+    height: $tag-h;
+    font-size: $fz-tag;
+    color: $color-white;
+    border-radius: $tag-br;
+}
+
+@mixin flex($g, $s, $b){
+    flex: {
+        grow: $g;
+        shrink: $s;
+        basis: $b;
+    }
+}
+@mixin text-style($fz, $clr) {
+    font: {
+        size: $fz;
+    }
+    color: $clr;
+}
+@mixin tag($bg) {
+    background: $bg;
+    @extend %tag-style;
+    @extend %flex-center-align;
+    position: absolute;
+    top: 22px;
+    left: -16px;
+}
+@mixin checkbox($w, $b, $bg) {
+    width: $w;
+    height: $w;
+    border-radius: $checkbox-br;
+    border: $b;
+    background: $bg;
+}
+body {
+    font-family: $ff-roboto;
+    @extend %flex-row-wrap;
+    @include text-style($fz-regular, $color-item-card-text);
+}
+body > *{
+    @include flex(1, 0, 100%);
+}
+aside {
+    padding: 50px 10px;
+    @include flex(1, 0, 0);
+}
+main {
+    
+    @include flex(4, 0, 0);
+}
+img {
+    display: inline-block;
+}
+li {
+    list-style: none;
+}
+a {
+    cursor: pointer;
+}
+h3 {
+    margin: 0;
+    padding-bottom: 5px;
+    font-weight: normal;
+}
+//* HEADER
+.header {
+    height: $header-h;
+    box-shadow: 6px 2px 20px 5px rgba(0, 0, 0, 0.06);
+}
+.header-wrap {
+    display: flex;
+    align-items: center;
+    padding: 0 25px 0 50px;
+    width: 100%;
+    justify-content: space-between;
+}
+nav>ul {
+    margin: 0;
+    padding: 0;
+}
+.header,  .header-sections, .header-user-actions{
+    @extend %flex-center-align;
+}
+
+.logo {
+    margin-right: 115px;
+}
+.logo>a {
+    font-weight: bold;
+    text-decoration: none;
+    @include text-style($fz-logo, $color-blue);
+}
+.header-sections {
+    width: 100%;
+    max-width: 800px;
+}
+.sections {
+    margin-right: 300px;
+}
+.header-section {
+    display: flex;
+    margin-left: 55px;
+    position: relative;
+}
+.header-section:nth-child(1) {
+    margin-left: 0px;
+}
+.header-section a {
+    text-decoration: none;
+    position: relative;
+}
+.header-section p {
+    margin: 40px 0px;
+    padding-left: 10px;
+}
+.header-section:not(:nth-child(2)) a {
+    @include text-style($fz-regular, $color-header-links)
+}
+.header-section:not(:nth-child(2)) img {
+    opacity: 0.3;
+}
+.header-section:nth-child(2) {
+    position: relative;
+}
+.header-section:nth-child(2)::before {
+    content:'';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $line-w;
+    height: $line-h;
+    border-radius: $line-br;
+    background: $color-blue;
+}
+.header-section:nth-child(2) a {
+    white-space: nowrap;
+    @include text-style($fz-regular, $color-blue);
+}
+
+@mixin notification($bgc) {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: $bgc;
+    text-align: center;
+    color: $color-white;
+    z-index: 2;
+}
+.notification-section {
+    @include notification($color-orange);
+    top: 32%;
+    left: -10%;
+}
+.notification-user-action {
+    @include notification($color-blue);
+    top: -16%;
+    left: -85%;
+}
+.header-user-action:nth-child(2) {
+    padding: 0 30px 0 43px;
+}
+.header-user-action{
+    position: relative;
+}
+.header-user-action a{
+    @include text-style($fz-regular, $color-header-links)
+}
+
+//
+//* ASIDE 
+.list-header>label {
+    font-family: $ff-openSans;
+    font-weight: 600;
+    @include text-style($fz-aside-section, $color-aside-list);
+}
+.type>label{
+    font-family: $ff-openSans;
+    letter-spacing: 0.909091px;
+    @include text-style($fz-aside-subsection, $color-aside-list)
+}
+
+.custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  @mixin label-position-style($h) {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    height: $h;
+  }
+  .custom-checkbox-header+label {
+      @include label-position-style(22px);
+  }
+  .custom-checkbox+label {
+    @include label-position-style(18px);
+  }
+
+  @mixin label-before-style($b, $br, $mr) {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    @include flex(0, 0, auto);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    border: $b;
+    border-radius: $br;
+    margin-right: $mr;
+  }
+  .custom-checkbox+label::before {
+    @include label-before-style(1px solid $color-checkbox-border, $checkbox-br, $checkbox-mr-subsection)
+  }
+  .custom-checkbox-header+label::before {
+    @include label-before-style(1px solid $color-checkbox-border, $checkbox-br, $checkbox-mr-section)
+  }
+
+  @mixin checkbox-bc-bgc ($bc, $bgc) {
+    border-color: $bc;
+    background-color: $bgc;
+  }
+  .custom-checkbox:checked+label {
+    color: $color-orange;
+}
+  .custom-checkbox:checked+label::before {
+      @include checkbox-bc-bgc($color-orange, $color-orange);
+  }
+  .custom-checkbox-header:indeterminate+label::before {
+    @include checkbox-bc-bgc($color-orange, $color-orange);
+    background-image: url('../assets/img/minus.svg')
+  }
+.custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+    border-color: $color-custom-orange;
+  }
+  .custom-checkbox:not(:disabled):active+label::before {
+    background-color: $color-custom-orange;
+    border-color: $color-custom-orange;
+  }
+  .custom-checkbox:focus+label::before {
+    box-shadow: 0 0 0 1px $color-custom-orange;
+  }
+  .custom-checkbox:focus:not(:checked)+label::before {
+    border-color: $color-custom-orange;
+  }
+  .custom-checkbox:disabled+label::before {
+    background-color: #e9ecef;
+  }
+  .list-header>label {
+    margin-bottom: $checkbox-mb-section;
+  }
+  .list-header>ul {
+      margin-left: $ul-ml;
+      padding-left: $ul-pl;
+  }
+  .list>li {
+    margin-bottom: $checkbox-mb-subsection;
+  }
+  .list:last-child {
+    margin-bottom: $checkbox-mb-subsection-last;
+  }
+//
+
+//* MAIN
+
+figure {
+    margin: 0;
+}
+.main-wrap {
+    padding-top: 55px;
+    padding-left: 45px;
+    margin-right: 115px;
+}
+
+.request-info {
+    @extend %flex-row-wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+.request-info>p>a {
+    color: $color-blue;
+}
+.filter-info {
+    @extend %flex-row-wrap;
+    align-items: center;
+}
+.jeans {
+    margin-right: 60px;
+    @include text-style($fz-jeans, rgba(56, 70, 110, 0.6))
+}
+.clothes-found {
+    @include text-style($fz-regular, rgba(56, 70, 110, 0.6))
+}
+
+section {
+    @extend %flex-row-wrap;
+    justify-content: space-between;
+}
+article {
+    margin-bottom: 30px;
+    position: relative;
+    border-radius: $line-br;  
+}
+figure{
+    z-index: 1;
+}
+.card-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 300px;
+    z-index: 0;
+    box-shadow: -1px 8px 20px rgba(0, 0, 0, 0.05);
+}
+.item-card {
+    position: relative;
+}
+
+.item-img {
+    @extend %item-img;
+}
+.item-title {
+    @include text-style($fz-item-name, $color-item-card-text)
+}
+.item-cost {
+    margin: 0;
+}
+figcaption{
+    padding: 14px 25px 25px;
+    background: $color-white;
+}
+.card-tag {
+    @include tag($color-blue);
+}
+.listed {
+    @include tag($color-orange);    
+}

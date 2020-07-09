@@ -53,7 +53,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
-    extensions: ['.js', '.css', '.sass', '.svg', '.ttf'],
+    extensions: ['.js', '.css', '.sass', '.scss', '.svg', '.ttf'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
       '@css': path.resolve(__dirname, 'src/css'),
@@ -78,11 +78,11 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/assets/fonts/Roboto/Roboto-Regular.ttf'),
-          to: path.resolve(__dirname, 'dist'),
+          to: path.resolve(__dirname, 'dist/'),
         },
         {
           from: path.resolve(__dirname, 'src/assets/fonts/Open_Sans/OpenSans-Regular.ttf'),
-          to: path.resolve(__dirname, 'dist'),
+          to: path.resolve(__dirname, 'dist/'),
         },
       ],
     }),
@@ -107,7 +107,14 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: ['file-loader'],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: './assets/img/[name].[ext]',
+            },
+          },
+        ],
       },
     //   {
     //       test: /\.ttf$/,
