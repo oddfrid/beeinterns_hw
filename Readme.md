@@ -1,14 +1,14 @@
-##Задание:
+## Задание:
 Реализовать функционал взаимодействия с backend посредоством HTTP запросов.
 
-##Требования:
+## Требования:
 HTTP запросы должно быть асинхронными (AJAX).
 Можно использовать любой интерфейс для написания HTTP запросов (Fetch, Axios, Redaxios, Superagent), не принципиально.
 При написании кода необходимо учитывать, что любой запрос может завершиться с ошибкой (statusCode 300~599). При этом код должен продолжать работать корректно.
 Стилизовать кнопку и тексты необязательно - по желанию.
 Шаблон серверной части можно взять из материалов 27 лекции. Либо написать свой - не принципиально.
 
-##ТЗ:
+## ТЗ:
 Backend API:
 [GET]  /serviceavailable/
 JSON-Response: { "isSucceeded": true }
@@ -19,7 +19,7 @@ JSON-Response: { "isSucceeded": true, "text": "Info info info info info info" }
 [GET]  /getdescription/
 JSON-Response: { "isSucceeded": true, "text": "Description Description Description Description Description Description" }
 
-##Функционал:
+## Функционал:
 Есть кнопка с текстом "Получить".
 По клику на кнопку вызывается метод /serviceavailable/
 Если метод завершился с ошибкой (statusCode 300~599) либо ответил { "isSucceeded": false }, то под кнопкой вывести текст "Произошла ошибка".
